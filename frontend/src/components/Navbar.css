@@ -1,0 +1,47 @@
+.header a {
+    font-size: xx-large;
+    color: #ffffff
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding-top: 1fr;
+    margin: 0;
+    background-color: #1caedb;
+    color:rgb(0, 0, 0);
+    font-size: large;
+    font-weight: bold;
+    width: 100%;
+    height: 75px;
+}
+
+.navbar .searchbar {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    width: 50%;
+    margin: auto;
+}
+
+.login-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    align-items: center;
+}
+
+a {
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.navbar img {
+    width: 35px;
+}

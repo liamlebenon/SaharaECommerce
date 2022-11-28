@@ -1,0 +1,18 @@
+.cart-card {
+    width: 600px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 8% auto 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.cart-card img {
+    width: 70px;
+    margin-top: -50px;
+}
+
+.cart-card a {
+    font-weight: bold;
+}

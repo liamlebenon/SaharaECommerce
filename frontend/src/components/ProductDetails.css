@@ -1,0 +1,35 @@
+.product-details-card {
+    width: 500px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 2% auto 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.product-details-card button {
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: #1c8adb;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.product-details-card button:hover {
+    background-color: #1caedb;
+}
+
+.product-price {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.product-details-card img {
+    width: 50%;
+}
