@@ -1,13 +1,16 @@
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectIsLoggedIn } from '../app/features/userSlice';
-import { selectTotalItems } from '../app/features/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../app/features/userSlice';
+import { selectTotalItems } from '../../app/features/cartSlice';
+import { fetchFilteredProducts, selectSearchTerm, setSearchTerm } from '../../app/features/productsSlice';
 
 export const Navbar = () => {
 
     const isLoggedIn = useSelector(selectIsLoggedIn);
     const totalItems = useSelector(selectTotalItems);
+    const searchTerm = useSelector(selectSearchTerm);
+    const dispatch = useDispatch();
 
     return (
         <section className="navbar">
@@ -16,7 +19,7 @@ export const Navbar = () => {
                 <p><Link to='/'>Sahara.com</Link></p>
             </div>
             <div className='searchbar'>
-                <input></input><button>Search</button>
+                <input id='newSearchTerm' onChange={(e) => dispatch(setSearchTerm(e.target.value))}></input><button onClick={() => dispatch(fetchFilteredProducts(searchTerm))}>Search</button>
             </div>
             <div className='login-buttons'>
                 {isLoggedIn ? 

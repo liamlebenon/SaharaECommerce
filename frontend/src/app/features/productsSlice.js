@@ -1,4 +1,4 @@
-const { createAsyncThunk, createSlice } = require('@reduxjs/toolkit');
+const { createAsyncThunk, createSlice, current } = require('@reduxjs/toolkit');
 
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts',
@@ -14,10 +14,23 @@ export const productsSlice = createSlice({
     name: 'products',
     initialState: {
         products: {},
+        searchTerm: '',
+        filteredProducts: {},
         isLoadingProducts: true,
         failedToLoadProducts: false
     },
-    reducers: {},
+    reducers: {
+        fetchFilteredProducts: (state, action) => {
+            state.filteredProducts = current(state.products).filter(product => product.name.toLowerCase().includes(action.payload.toLowerCase()));
+            console.log(state.filteredProducts)
+        },
+
+        setSearchTerm: (state, action) => {
+            console.log(action.payload)
+            state.searchTerm = action.payload;
+        }
+    },
+
     extraReducers: (builder) => {
         builder.addCase(fetchProducts.pending, (state) => {
             state.isLoadingProducts = true;
@@ -39,5 +52,6 @@ export const productsSlice = createSlice({
 
 export const selectProducts = state => state.products.products;
 export const selectIsLoadingProducts = state => state.products.isLoadingProducts;
-export const { loadProducts } = productsSlice.actions;
+export const selectSearchTerm = state => state.products.searchTerm;
+export const { loadProducts, fetchFilteredProducts, setSearchTerm } = productsSlice.actions;
 export default productsSlice.reducer;

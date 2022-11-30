@@ -1,8 +1,8 @@
 import './Cart.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCart, removeItemFromCart } from '../app/features/cartSlice';
-import { selectIsLoggedIn } from '../app/features/userSlice';
+import { selectCart, removeItemFromCart } from '../../app/features/cartSlice';
+import { selectIsLoggedIn } from '../../app/features/userSlice';
 
 export const Cart = () => {
     const cart = useSelector(selectCart);

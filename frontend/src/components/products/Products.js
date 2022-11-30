@@ -1,10 +1,11 @@
 import './Products.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, selectIsLoadingProducts, selectProducts } from '../app/features/productsSlice';
-import { addToCart } from '../app/features/cartSlice';
+import { fetchProducts, selectIsLoadingProducts, selectProducts, selectSearchTerm } from '../../app/features/productsSlice';
+import { addToCart } from '../../app/features/cartSlice';
 import { Link } from 'react-router-dom';
-
+import { Spinner } from '../spinner/Spinner';
+ 
 export const Products = () => {
     const dispatch = useDispatch();
     const products = useSelector(selectProducts);
@@ -16,8 +17,8 @@ export const Products = () => {
 
     if (isLoading) {
         return (
-            <div>
-                <h1>Products are loading...</h1>
+            <div className='spinner'>
+                <Spinner />
             </div>
         )
     } else {

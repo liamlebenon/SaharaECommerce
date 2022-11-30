@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import { selectIsLoadingUser, selectUser } from '../app/features/userSlice';
-import { clearCart } from '../app/features/cartSlice';
+import { selectIsLoadingUser, selectUser } from '../../app/features/userSlice';
+import { clearCart } from '../../app/features/cartSlice';
 import './Profile.css';
 
 export const Profile = () => {
